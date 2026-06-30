@@ -95,7 +95,7 @@ const Hero = () => {
                 <img
                 src={theme === 'dark' ? '/agu.png' : '/agu-dark.png'}
                 alt="Agu Collins Chidera"
-                style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} loading="eager"
               />
 
               </div>

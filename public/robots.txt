@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://agc-portfolio.vercel.app/sitemap.xml

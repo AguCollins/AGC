@@ -57,7 +57,7 @@ const App = () => {
     return () => observer.disconnect()
   }, [])
 
-  // ⭐ Cursor glow tracking
+  // Cursor glow tracking
   useEffect(() => {
     const glow = document.getElementById('cursor-glow')
     if (!glow) return
@@ -73,59 +73,39 @@ const App = () => {
 
   return (
     <>
+      
       <Helmet>
+        <title>Agu Collins Chidera · Frontend Developer</title>
         
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Agu Collins Chidera",
-            "jobTitle": "Frontend Developer",
-            "url": "https://aguchidera.dev",
-            "email": "Collinsagu2019@gmail.com",
-            "telephone": "+2348058842585",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Lagos",
-              "addressCountry": "NG"
-            },
-            "alumniOf": {
-              "@type": "EducationalOrganization",
-              "name": "Enugu State University of Science and Technology"
-            },
-            "knowsAbout": ["React", "JavaScript", "UI/UX", "HTML", "CSS", "Bootstrap", "Python", "Git"]
-          })}
-        </script>
       </Helmet>
 
-      {/* ⭐ Cursor glow element */}
       <div id="cursor-glow"></div>
-
       <Loader />
       <ScrollProgress />
       <BackToTop />
       <Navigation />
 
-      <Hero />
-      <div className="section-divider"></div>
-      <About />
-      <div className="section-divider"></div>
-      <Skills />
-      <div className="section-divider"></div>
-      <Experience />
-      <div className="section-divider"></div>
-      <Projects />
-      <div className="section-divider"></div>
-      <Education />
-      <div className="section-divider"></div>
-      <TechStack />
-      <div className="section-divider"></div>
-      <Achievements />
-      <div className="section-divider"></div>
-      <Testimonials />
-      <div className="section-divider"></div>
-      <Contact />
+      <main id="main" role="main">
+        <Hero />
+        <div className="section-divider"></div>
+        <About />
+        <div className="section-divider"></div>
+        <Skills />
+        <div className="section-divider"></div>
+        <Experience />
+        <div className="section-divider"></div>
+        <Projects />
+        <div className="section-divider"></div>
+        <Education />
+        <div className="section-divider"></div>
+        <TechStack />
+        <div className="section-divider"></div>
+        <Achievements />
+        <div className="section-divider"></div>
+        <Testimonials />
+        <div className="section-divider"></div>
+        <Contact />
+      </main>
 
       <Footer />
       <ToastContainer
