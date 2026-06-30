@@ -99,7 +99,7 @@ const App = () => {
         <meta property="og:url" content="https://agc-portfolio.vercel.app" />
         <meta
           property="og:image"
-          content="https://agc-portfolio.vercel.app/preview.png"
+          content="/preview.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -120,7 +120,7 @@ const App = () => {
         />
         <meta
           name="twitter:image"
-          content="https://agc-portfolio.vercel.app/preview.png"
+          content="/preview.png"
         />
         <meta
           name="twitter:image:alt"
@@ -129,6 +129,7 @@ const App = () => {
 
         {/* Canonical */}
         <link rel="canonical" href="https://agc-portfolio.vercel.app" />
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
