@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import ParticlesCanvas from './ParticlesCanvas'
 import { socialLinks } from '../../../data/socialLinks'
+import { useTheme } from '../../../context/ThemeContext'
 
 const Hero = () => {
   const { theme } = useTheme()
+
   const typedRef = useRef(null)
 
   useEffect(() => {
