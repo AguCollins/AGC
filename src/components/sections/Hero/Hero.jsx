@@ -1,13 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import ParticlesCanvas from './ParticlesCanvas'
-import { Link as ScrollLink } from 'react-scroll'
 import { socialLinks } from '../../../data/socialLinks'
-import { useTheme } from '../../../context/ThemeContext'
 
 const Hero = () => {
   const { theme } = useTheme()
-
   const typedRef = useRef(null)
 
   useEffect(() => {
@@ -29,6 +26,15 @@ const Hero = () => {
     const typed = new Typed(typedRef.current, options)
     return () => typed.destroy()
   }, [])
+
+  // Smooth scroll helper
+  const handleScrollTo = (e, targetId) => {
+    e.preventDefault()
+    const element = document.getElementById(targetId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <section id="hero">
@@ -57,12 +63,20 @@ const Hero = () => {
               blending technical precision with creative UI/UX to build performant, human‑centred web experiences.
             </p>
             <div className="d-flex flex-wrap gap-3 mt-4">
-              <ScrollLink to="contact" smooth={true} offset={-70} duration={500} className="btn btn-gradient">
+              <a
+                href="#contact"
+                className="btn btn-gradient"
+                onClick={(e) => handleScrollTo(e, 'contact')}
+              >
                 <i className="bi bi-send me-2"></i>Hire Me
-              </ScrollLink>
-              <a href="Agu_Collins_Chidera_CV.pdf" download className="btn btn-outline-neon">
-      				  <i className="bi bi-download me-2"></i>Download CV
-      			  </a>
+              </a>
+              <a
+                href="/Agu_Collins_Chidera_CV.pdf"
+                download
+                className="btn btn-outline-neon"
+              >
+                <i className="bi bi-download me-2"></i>Download CV
+              </a>
             </div>
             <div className="hero-social d-flex gap-3 mt-4">
               {socialLinks.map((item) => (
@@ -75,12 +89,13 @@ const Hero = () => {
           <div className="col-lg-5 text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
             <div style={{ position: 'relative', display: 'inline-block' }}>
               <div style={{ width: '280px', height: '280px', borderRadius: '50%', background: 'var(--gradient-primary)', opacity: 0.06, filter: 'blur(40px)', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}></div>
-              <div style={{ width: '240px', height: '240px', borderRadius: '50%', border: '2px solid var(--glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto', position: 'relative', background: 'var(--bg-card)', backdropFilter: 'blur(8px)' }}>
+              <div style={{ width: '240px', height: '240px', borderRadius: '50%', border: '2px solid var(--glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto', position: 'relative', background: 'var(--bg-card)', backdropFilter: 'blur(8px)', overflow: 'hidden' }}>
                 <img
-				  src={theme === 'dark' ? '/agu.png' : '/agu-dark.png'}
-				  alt="Agu Collins Chidera"
-				  style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }}
-				/>
+                src={theme === 'dark' ? '/agu.png' : '/agu-dark.png'}
+                alt="Agu Collins Chidera"
+                style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }}
+              />
+
               </div>
               <div style={{ position: 'absolute', bottom: '10px', right: 0, background: 'var(--bg-card)', backdropFilter: 'blur(8px)', border: '1px solid var(--glass-border)', borderRadius: '40px', padding: '8px 20px', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
                 <i className="bi bi-geo-alt-fill me-1" style={{ color: 'var(--neon-blue)' }}></i> Lagos, NG
@@ -93,4 +108,4 @@ const Hero = () => {
   )
 }
 
-export default Hero 
+export default Hero
