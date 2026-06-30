@@ -74,7 +74,11 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>Agu Collins Chidera · Frontend Developer</title>
+        <meta
+          name="description"
+          content="Portfolio of Agu Collins Chidera, a Frontend Developer specializing in React, Next.js, TypeScript, and modern UI/UX."
+        />
+
         <meta
           name="keywords"
           content="Agu Collins Chidera, Frontend Developer, React Developer, Next.js, TypeScript, JavaScript, Portfolio"
@@ -84,35 +88,46 @@ const App = () => {
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#0B1120" />
 
-        <!-- Open Graph -->
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Agu Collins Chidera Portfolio" />
         <meta property="og:title" content="Agu Collins Chidera | Frontend Developer" />
-
         <meta
           property="og:description"
           content="Frontend Developer building fast, responsive, and accessible web applications with React, Next.js, TypeScript, and modern UI/UX."
         />
-
         <meta property="og:url" content="https://agc-portfolio.vercel.app" />
-        <meta property="og:image" content="https://agc-portfolio.vercel.app/preview.png" />
+        <meta
+          property="og:image"
+          content="https://agc-portfolio.vercel.app/preview.png"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Agu Collins Chidera Portfolio Preview" />
+        <meta
+          property="og:image:alt"
+          content="Agu Collins Chidera Portfolio Preview"
+        />
 
-        <!-- Twitter -->
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Agu Collins Chidera | Frontend Developer" />
-
+        <meta
+          name="twitter:title"
+          content="Agu Collins Chidera | Frontend Developer"
+        />
         <meta
           name="twitter:description"
           content="Frontend Developer building modern, scalable, and user-focused web experiences with React, Next.js, and TypeScript."
         />
+        <meta
+          name="twitter:image"
+          content="https://agc-portfolio.vercel.app/preview.png"
+        />
+        <meta
+          name="twitter:image:alt"
+          content="Agu Collins Chidera Portfolio Preview"
+        />
 
-        <meta name="twitter:image" content="https://agc-portfolio.vercel.app/preview.png" />
-        <meta name="twitter:image:alt" content="Agu Collins Chidera Portfolio Preview" />
-
-        <!-- Canonical -->
+        {/* Canonical */}
         <link rel="canonical" href="https://agc-portfolio.vercel.app" />
         <script type="application/ld+json">
           {JSON.stringify({
